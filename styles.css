@@ -1,0 +1,145 @@
+*, ::after, ::before{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #cfd0cf;
+}
+
+.title{
+	font: 42px/47px Arial;
+	text-align: center;
+	margin: 35px 0;
+	color: #434344;
+}
+
+.timer{
+	font: 32px/36px Arial;
+	text-align: center;
+	margin: 25px 0px 0px;
+	color: #434344;
+}
+
+.gameover-screen{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.5);
+	display: none;
+}
+
+.gameover-screen__window{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.gameover-window{
+	min-width: 350px;
+	background-color: white;
+	width: 400px;
+}
+
+.gameover-window__text{
+	margin: 30px 0px 40px;
+	text-align: center;
+	font: 48px Arial;
+	color: #434344;
+}	
+
+.gameover-window__button{
+	padding: 0px 30px;
+	margin: 0px auto 30px auto;
+	font: 20px Arial;
+	color: white;
+	height: 40px;
+	background-image: linear-gradient(45deg, #19668d, #22ab93);
+	outline: none;
+	border: none;
+	box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.gameover-window__button:active{
+	box-shadow: none;
+	box-shadow: inset 2px 1px 8px rgba(0,0,0,.4);
+}
+
+.gameover-window__button:hover{
+	background-image: linear-gradient(45deg, #19668d, #40bfa5);
+}
+
+.wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.area{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 25px;
+	perspective: 600px;
+}
+
+.card{
+	height: 140px;
+	width: 140px;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.card__side{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border: 5px solid white;
+	border-radius: 9px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+	backface-visibility: hidden;
+}
+
+.card__back{
+	background-image: linear-gradient(45deg, #22ab93, #19668d);
+}
+.card__front{
+	background-color: white;
+	font-size: 75px;
+	line-height: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: rotateY(-180deg);
+}
+
+.card:hover{
+	cursor: pointer;
+}
+
+.card__rotate-right{
+	transform: rotateY(180deg);
+	transition: transform .35s linear;
+}
+
+.card__rotate-left{
+	transform: rotateY(0deg);
+	transition: transform .35s linear;
+}
+
+.card__front__green{
+	background-color: #5ad66f;
+	border-color: #5ad66f;
+}
+
+.card__front__red{
+	background-color: #f44336;
+	border-color: #f44336;
+}
